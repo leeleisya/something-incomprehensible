@@ -1,0 +1,24 @@
+import java.util.Arrays;
+import java.util.OptionalInt;
+import java.util.Scanner;
+public class Testing {
+	public static void main(String[] args) {
+		Scanner scan= new Scanner(System.in);
+		System.out.println("Enter array length: ");
+        int n = scan.nextInt();
+		int[] b = new int [n];
+		System.out.println("\nInput elements of array: ");
+        for (int i = 0; i<n; ++i) {
+              b[i]=scan.nextInt();//вводимо масив з клавіатури
+              }
+        scan.close();    
+        System.out.print("\nArray:\n{" + b[0]);
+	    for (int i = 1; i < n; i++) {
+	        System.out.print(", " + b[i]);
+	    }
+	    System.out.print("}\n\n");
+	    System.out.print("Result, the max number is:  ");
+		OptionalInt max = Arrays.stream(b).max();
+		System.out.println(max.getAsInt());
+	}
+}
